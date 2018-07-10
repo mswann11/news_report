@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_topic_labels">
+        <item>@string/settings_topic_all_label</item>
+        <item>@string/settings_topic_world_label</item>
+        <item>@string/settings_topic_us_label</item>
+        <item>@string/settings_topic_politics_label</item>
+        <item>@string/settings_topic_business_label</item>
+        <item>@string/settings_topic_science_label</item>
+        <item>@string/settings_topic_books_label</item>
+        <item>@string/settings_topic_environment_label</item>
+        <item>@string/settings_topic_society_label</item>
+        <item>@string/settings_topic_music_label</item>
+    </string-array>
+
+    <string-array name="settings_topic_values">
+        <item>@string/settings_topic_all_value</item>
+        <item>@string/settings_topic_world_value</item>
+        <item>@string/settings_topic_us_value</item>
+        <item>@string/settings_topic_politics_value</item>
+        <item>@string/settings_topic_business_value</item>
+        <item>@string/settings_topic_science_value</item>
+        <item>@string/settings_topic_books_value</item>
+        <item>@string/settings_topic_environment_value</item>
+        <item>@string/settings_topic_society_value</item>
+        <item>@string/settings_topic_music_value</item>
+    </string-array>
+
+    <string-array name="settings_order_by_labels">
+        <item>@string/settings_order_by_newest_label</item>
+        <item>@string/settings_order_by_relevance_label</item>
+    </string-array>
+
+    <string-array name="settings_order_by_values">
+        <item>@string/settings_order_by_newest_value</item>
+        <item>@string/settings_order_by_relevance_value</item>
+    </string-array>
+
+</resources>

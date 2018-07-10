@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/divider"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/padding_vertical"
+    android:paddingLeft="@dimen/padding_horizontal"
+    android:paddingRight="@dimen/padding_horizontal"
+    android:paddingTop="@dimen/padding_vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:elevation="@dimen/elevation">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image"
+            android:contentDescription="@string/thumbnail"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/thumbnail"
+            android:padding="@dimen/padding_vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_marginRight="@dimen/margin_horizontal"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_marginRight="@dimen/margin_horizontal"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/text_body" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/body"
+                android:layout_marginStart="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                android:textColor="@color/secondaryText"
+                android:textSize="@dimen/text_info"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/author"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginStart="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_date_top"
+                android:textAllCaps="true"
+                android:textColor="@color/secondaryText"
+                android:textSize="@dimen/text_info" />
+
+            <TextView
+                android:id="@+id/section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/author"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginEnd="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_section_top"
+                android:paddingBottom="@dimen/padding_section_vertical"
+                android:paddingLeft="@dimen/padding_section_horizontal"
+                android:paddingRight="@dimen/padding_section_horizontal"
+                android:paddingTop="@dimen/padding_section_vertical"
+                android:textAllCaps="true"
+                android:textColor="@color/secondaryText"
+                android:textSize="@dimen/text_info" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">World News Report</string>
+    <string name="no_stories">There are no stories to show.</string>
+    <string name="no_internet">No internet connection.</string>
+    <string name="refresh_menu_item">Refresh</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+    <string name="thumbnail">Article thumbnail</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+    <string name="settings_topic_label">Browse by Topic</string>
+    <string name="settings_topic_key" translatable="false">topic</string>
+    <string name="settings_topic_default" translatable="false">@string/settings_topic_all_value</string>
+    <string name="settings_topic_all_label">All</string>
+    <string name="settings_topic_all_value" translatable="false">world|us-news|politics|business|science|books|environment|society|music</string>
+    <string name="settings_topic_world_label">World News</string>
+    <string name="settings_topic_world_value" translatable="false">world</string>
+    <string name="settings_topic_us_label">US News</string>
+    <string name="settings_topic_us_value" translatable="false">us-news</string>
+    <string name="settings_topic_politics_label">Politics</string>
+    <string name="settings_topic_politics_value" translatable="false">politics</string>
+    <string name="settings_topic_business_label">Business</string>
+    <string name="settings_topic_business_value" translatable="false">business</string>
+    <string name="settings_topic_science_label">Science</string>
+    <string name="settings_topic_science_value" translatable="false">science</string>
+    <string name="settings_topic_books_label">Books</string>
+    <string name="settings_topic_books_value" translatable="false">books</string>
+    <string name="settings_topic_environment_label">Environment</string>
+    <string name="settings_topic_environment_value" translatable="false">environment</string>
+    <string name="settings_topic_society_label">Society</string>
+    <string name="settings_topic_society_value" translatable="false">society</string>
+    <string name="settings_topic_music_label">Music</string>
+    <string name="settings_topic_music_value" translatable="false">music</string>
+    <string name="settings_search_label">Search</string>
+    <string name="settings_search_key" translatable="false">search</string>
+    <string name="settings_search_default" translatable="false"> </string>
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_newest_value</string>
+    <string name="settings_order_by_newest_label">Newest</string>
+    <string name="settings_order_by_newest_value" translatable="false">newest</string>
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+</resources>
