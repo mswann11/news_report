@@ -4,6 +4,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:preferenceFragmentStyle">@style/PrefStyle</item>
+    </style>
+
+    <style name="PrefStyle">
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0dp</item>
     </style>
 
 </resources>

@@ -27,62 +27,62 @@ public class StoryAdapter extends ArrayAdapter<Story> {
 
         Story currentStory = getItem(position);
 
-        TextView title = listItemView.findViewById(R.id.title);
-        title.setText(currentStory.getTitle());
+        TextView titleNewsTextView = listItemView.findViewById(R.id.title_text_view);
+        titleNewsTextView.setText(currentStory.getTitle());
 
-        TextView author = listItemView.findViewById(R.id.author);
+        TextView authorNewsTextView = listItemView.findViewById(R.id.author_text_view);
         if (currentStory.getAuthor() != null) {
-            author.setText(currentStory.getAuthor());
+            authorNewsTextView.setText(currentStory.getAuthor());
         } else {
-            author.setVisibility(View.GONE);
+            authorNewsTextView.setVisibility(View.GONE);
         }
 
-        TextView date = listItemView.findViewById(R.id.date);
-        date.setText(currentStory.getDate());
+        TextView dateNewsTextView = listItemView.findViewById(R.id.date_text_view);
+        dateNewsTextView.setText(currentStory.getDate());
 
-        TextView section = listItemView.findViewById(R.id.section);
-        section.setTextColor(ContextCompat.getColor(getContext(), R.color.background));
+        TextView sectionNewsTextView = listItemView.findViewById(R.id.section_text_view);
+        sectionNewsTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.background));
         String category = currentStory.getSection();
 
         switch (category) {
             case "Science":
-                section.setBackgroundResource(R.color.science);
+                sectionNewsTextView.setBackgroundResource(R.color.science);
                 break;
             case "Books":
-                section.setBackgroundResource(R.color.books);
+                sectionNewsTextView.setBackgroundResource(R.color.books);
                 break;
             case "US news":
-                section.setBackgroundResource(R.color.us);
+                sectionNewsTextView.setBackgroundResource(R.color.us);
                 break;
             case "Business":
-                section.setBackgroundResource(R.color.business);
+                sectionNewsTextView.setBackgroundResource(R.color.business);
                 break;
             case "World news":
-                section.setBackgroundResource(R.color.world);
+                sectionNewsTextView.setBackgroundResource(R.color.world);
                 break;
             case "Environment":
-                section.setBackgroundResource(R.color.environment);
+                sectionNewsTextView.setBackgroundResource(R.color.environment);
                 break;
             case "Politics":
-                section.setBackgroundResource(R.color.politics);
+                sectionNewsTextView.setBackgroundResource(R.color.politics);
                 break;
             case "Society":
-                section.setBackgroundResource(R.color.society);
+                sectionNewsTextView.setBackgroundResource(R.color.society);
                 break;
             case "Music":
-                section.setBackgroundResource(R.color.music);
+                sectionNewsTextView.setBackgroundResource(R.color.music);
                 break;
             default:
-                section.setBackgroundResource(R.color.background);
-                section.setTextColor(ContextCompat.getColor(getContext(), R.color.secondaryText));
+                sectionNewsTextView.setBackgroundResource(R.color.background);
+                sectionNewsTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.secondaryText));
         }
 
-        section.setText(currentStory.getSection());
-        ImageView thumbnail = listItemView.findViewById(R.id.thumbnail);
-        thumbnail.setImageDrawable(currentStory.getImage());
+        sectionNewsTextView.setText(currentStory.getSection());
+        ImageView thumbnailNewsImageView = listItemView.findViewById(R.id.thumbnail_image_view);
+        thumbnailNewsImageView.setImageDrawable(currentStory.getImage());
 
-        TextView body = listItemView.findViewById(R.id.body);
-        body.setText(currentStory.getBody());
+        TextView bodyNewsTextView = listItemView.findViewById(R.id.body_text_view);
+        bodyNewsTextView.setText(currentStory.getBody());
 
         return listItemView;
     }

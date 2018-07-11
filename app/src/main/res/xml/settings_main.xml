@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference
-        android:defaultValue="@string/settings_topic_default"
-        android:entries="@array/settings_topic_labels"
-        android:entryValues="@array/settings_topic_values"
-        android:key="@string/settings_topic_key"
-        android:title="@string/settings_topic_label" />
+    <PreferenceCategory
+        android:title="@string/content_preferences"
+        android:layout="@layout/preferences_category">
+        <EditTextPreference
+            android:defaultValue="@string/settings_search_default"
+            android:inputType="text"
+            android:key="@string/settings_search_key"
+            android:selectAllOnFocus="true"
+            android:title="@string/settings_search_label" />
 
-    <EditTextPreference
-        android:defaultValue="@string/settings_search_default"
-        android:inputType="text"
-        android:key="@string/settings_search_key"
-        android:selectAllOnFocus="true"
-        android:title="@string/settings_search_label" />
+        <ListPreference
+            android:defaultValue="@string/settings_topic_default"
+            android:entries="@array/settings_topic_labels"
+            android:entryValues="@array/settings_topic_values"
+            android:key="@string/settings_topic_key"
+            android:title="@string/settings_topic_label" />
+    </PreferenceCategory>
 
-    <ListPreference
-        android:defaultValue="@string/settings_order_by_default"
-        android:entries="@array/settings_order_by_labels"
-        android:entryValues="@array/settings_order_by_values"
-        android:key="@string/settings_order_by_key"
-        android:title="@string/settings_order_by_label" />
+    <PreferenceCategory
+        android:title="Date Filters"
+        android:layout="@layout/preferences_category">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/start_date_preferences"
+        android:layout="@layout/preferences_subcategory">
+        <EditTextPreference
+            android:defaultValue="@string/settings_from_date_default"
+            android:inputType="date"
+            android:key="@string/settings_from_date_key"
+            android:selectAllOnFocus="true"
+            android:title="@string/settings_from_date_label" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/end_date_preferences"
+        android:layout="@layout/preferences_subcategory">
+        <SwitchPreference
+            android:defaultValue="@string/settings_switch_default"
+            android:key="@string/settings_switch_key"
+            android:title="@string/settings_switch_label" />
+
+        <EditTextPreference
+            android:defaultValue=" "
+            android:inputType="date"
+            android:key="@string/settings_to_date_key"
+            android:selectAllOnFocus="true"
+            android:title="@string/settings_to_date_label" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/sort_preferences"
+        android:layout="@layout/preferences_category">
+        <ListPreference
+            android:defaultValue="@string/settings_order_by_default"
+            android:entries="@array/settings_order_by_labels"
+            android:entryValues="@array/settings_order_by_values"
+            android:key="@string/settings_order_by_key"
+            android:title="@string/settings_order_by_label" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

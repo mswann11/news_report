@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">World News Report</string>
-    <string name="no_stories">There are no stories to show.</string>
-    <string name="no_internet">No internet connection.</string>
+    <string name="no_stories_title">No stories to show.</string>
+    <string name="no_stories_info">Check your filters using the settings menu above and try again.</string>
+    <string name="no_internet_title">You are offline</string>
+    <string name="no_internet_info">News stories are not available offline.
+        Please connect to the internet and try again.</string>
     <string name="refresh_menu_item">Refresh</string>
     <string name="january">January</string>
     <string name="february">February</string>
@@ -22,7 +25,8 @@
     <string name="settings_topic_key" translatable="false">topic</string>
     <string name="settings_topic_default" translatable="false">@string/settings_topic_all_value</string>
     <string name="settings_topic_all_label">All</string>
-    <string name="settings_topic_all_value" translatable="false">world|us-news|politics|business|science|books|environment|society|music</string>
+    <string name="settings_topic_all_value" translatable="false">world|us-news|politics|business|
+        science|books|environment|society|music</string>
     <string name="settings_topic_world_label">World News</string>
     <string name="settings_topic_world_value" translatable="false">world</string>
     <string name="settings_topic_us_label">US News</string>
@@ -43,12 +47,24 @@
     <string name="settings_topic_music_value" translatable="false">music</string>
     <string name="settings_search_label">Search</string>
     <string name="settings_search_key" translatable="false">search</string>
-    <string name="settings_search_default" translatable="false"> </string>
+    <string name="settings_search_default" translatable="false"></string>
+    <string name="settings_from_date_label">From: (yyyy-mm-dd)</string>
+    <string name="settings_from_date_key" translatable="false">from-date</string>
+    <string name="settings_from_date_default" translatable="false"></string>
+    <string name="settings_to_date_label">To: (yyyy-mm-dd)</string>
+    <string name="settings_to_date_key" translatable="false">to-date</string>
     <string name="settings_order_by_label">Order By</string>
-    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_key" translatable="false">order-by</string>
     <string name="settings_order_by_default" translatable="false">@string/settings_order_by_newest_value</string>
     <string name="settings_order_by_newest_label">Newest</string>
     <string name="settings_order_by_newest_value" translatable="false">newest</string>
     <string name="settings_order_by_relevance_label">Relevance</string>
     <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
+    <string name="sort_preferences">Sort Order</string>
+    <string name="start_date_preferences">Start Date</string>
+    <string name="content_preferences">Content Filters</string>
+    <string name="settings_switch_key">switch</string>
+    <string name="settings_switch_label">Use Today\'s Date</string>
+    <string name="settings_switch_default">false</string>
+    <string name="end_date_preferences">End Date</string>
 </resources>

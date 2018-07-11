@@ -17,4 +17,7 @@
     <dimen name="margin_section_top">6dp</dimen>
     <dimen name="padding_section_vertical">2dp</dimen>
     <dimen name="padding_section_horizontal">4dp</dimen>
+    <dimen name="margin_empty">56dp</dimen>
+    <dimen name="padding_pref_cat">24dp</dimen>
+    <dimen name="divider_pref_cat">1dp</dimen>
 </resources>

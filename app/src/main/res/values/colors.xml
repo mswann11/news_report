@@ -6,6 +6,7 @@
     <color name="primaryText">#212121</color>
     <color name="secondaryText">#757575</color>
     <color name="divider">#ededed</color>
+    <color name="deselected">#c6c4c4</color>
     <color name="background">#FFFFFF</color>
     <color name="science">#7B1FA2</color>
     <color name="books">#1976D2</color>

@@ -8,24 +8,27 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.preference.EditTextPreference;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
@@ -33,10 +36,12 @@ public class MainActivity extends AppCompatActivity
 
     public static final String LOG_TAG = MainActivity.class.getName();
     private static final int LOADER_ID = 1;
-    //private static String REQUEST_URL = "https://content.guardianapis.com/search?section=world|uk-news|us-news&show-tags=contributor&show-fields=headline,thumbnail&show-blocks=body&order-by=newest&api-key=7868c9a0-e952-4413-94ce-6a2f8520c683";
     private static String REQUEST_URL = "https://content.guardianapis.com/search?api-key=7868c9a0-e952-4413-94ce-6a2f8520c683&show-tags=contributor&show-fields=headline,thumbnail&show-blocks=body";
     private StoryAdapter adapter;
-    private TextView emptyView;
+    private LinearLayout emptyLayout;
+    private TextView emptyTitleTextView;
+    private TextView emptyInfoTextView;
+    private ImageView emptyImageView;
     private ProgressBar progressBar;
     private ImageView guardianText;
     private LoaderManager loaderManager;
@@ -83,10 +88,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        emptyView = findViewById(R.id.empty);
-        storyListView.setEmptyView(emptyView);
+        emptyLayout = findViewById(R.id.empty);
+        emptyTitleTextView = findViewById(R.id.empty_title_text_view);
+        emptyInfoTextView = findViewById(R.id.empty_info_text_view);
+        emptyImageView = findViewById(R.id.empty_image_view);
+        storyListView.setEmptyView(emptyLayout);
         progressBar = findViewById(R.id.progress);
-        guardianText = findViewById(R.id.guardian_text);
+        guardianText = findViewById(R.id.guardian_image_view);
         loaderManager = getLoaderManager();
         loadData();
     }
@@ -95,19 +103,36 @@ public class MainActivity extends AppCompatActivity
     public Loader<List<Story>> onCreateLoader(int i, Bundle bundle) {
         Log.e(LOG_TAG, "onCreateLoader called");
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-
         String topic = sharedPrefs.getString(
             getString(R.string.settings_topic_key),
             getString(R.string.settings_topic_default));
         String search = sharedPrefs.getString(
             getString(R.string.settings_search_key),
             getString(R.string.settings_search_default));
+        String fromDate = sharedPrefs.getString(
+            getString(R.string.settings_from_date_key),
+            getString(R.string.settings_from_date_default));
         String orderBy  = sharedPrefs.getString(
-                getString(R.string.settings_order_by_key),
-                getString(R.string.settings_order_by_default));
+            getString(R.string.settings_order_by_key),
+            getString(R.string.settings_order_by_default));
+        String toDate = sharedPrefs.getString(
+            getString(R.string.settings_to_date_key),
+            getTodaysDate());
+        Boolean switchValue = sharedPrefs.getBoolean(
+            getString(R.string.settings_switch_key),
+            Boolean.valueOf(getString(R.string.settings_switch_default)));
+
         Uri baseUri = Uri.parse(REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
         uriBuilder.appendQueryParameter("section", topic);
+        if(!fromDate.equals("")) {
+            uriBuilder.appendQueryParameter("from-date", fromDate);
+        }
+        if(switchValue){
+            uriBuilder.appendQueryParameter("to-date", getTodaysDate());
+        } else {
+            uriBuilder.appendQueryParameter("to-date", toDate);
+        }
         if(!search.equals("")) {
             uriBuilder.appendQueryParameter("q", search);
         }
@@ -123,7 +148,9 @@ public class MainActivity extends AppCompatActivity
         if (stories != null && !stories.isEmpty()) {
             adapter.addAll(stories);
         }
-        emptyView.setText(R.string.no_stories);
+        emptyTitleTextView.setText(R.string.no_stories_title);
+        emptyInfoTextView.setText(R.string.no_stories_info);
+        emptyImageView.setImageResource(R.drawable.ic_library_books);
         progressBar.setVisibility(View.GONE);
         guardianText.setVisibility(View.GONE);
     }
@@ -142,7 +169,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void loadData() {
-        emptyView.setText("");
+        emptyTitleTextView.setText("");
+        emptyInfoTextView.setText("");
+        emptyImageView.setImageResource(0);
         Log.e(LOG_TAG, "refresh called");
         progressBar.setVisibility(View.VISIBLE);
         guardianText.setVisibility(View.VISIBLE);
@@ -151,7 +180,15 @@ public class MainActivity extends AppCompatActivity
         } else {
             progressBar.setVisibility(View.GONE);
             guardianText.setVisibility(View.GONE);
-            emptyView.setText(R.string.no_internet);
+            emptyTitleTextView.setText(R.string.no_internet_title);
+            emptyInfoTextView.setText(R.string.no_internet_info);
+            emptyImageView.setImageResource(R.drawable.ic_signal_wifi_off);
         }
+    }
+
+    public String getTodaysDate(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

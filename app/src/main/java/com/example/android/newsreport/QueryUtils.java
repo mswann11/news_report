@@ -140,7 +140,7 @@ public final class QueryUtils {
                     String imageUrl = fields.getString("thumbnail");
                     image = createDrawable(imageUrl);
                 } else{
-                    image = context.getResources().getDrawable(R.drawable.guardian_text);
+                    image = context.getResources().getDrawable(R.drawable.guardian_default);
                 }
                 String title = fields.getString("headline");
 

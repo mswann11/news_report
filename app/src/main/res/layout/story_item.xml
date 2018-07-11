@@ -16,7 +16,7 @@
         android:elevation="@dimen/elevation">
 
         <ImageView
-            android:id="@+id/thumbnail"
+            android:id="@+id/thumbnail_image_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_image"
             android:contentDescription="@string/thumbnail"
@@ -25,11 +25,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/thumbnail"
+            android:layout_below="@id/thumbnail_image_view"
             android:padding="@dimen/padding_vertical">
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/title_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_horizontal"
@@ -41,10 +41,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/body"
+                android:id="@+id/body_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/title"
+                android:layout_below="@id/title_text_view"
                 android:layout_marginLeft="@dimen/margin_horizontal"
                 android:layout_marginRight="@dimen/margin_horizontal"
                 android:ellipsize="end"
@@ -53,10 +53,10 @@
                 android:textSize="@dimen/text_body" />
 
             <TextView
-                android:id="@+id/author"
+                android:id="@+id/author_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/body"
+                android:layout_below="@id/body_text_view"
                 android:layout_marginStart="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_top"
                 android:textColor="@color/secondaryText"
@@ -64,10 +64,10 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/date_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/author"
+                android:layout_below="@id/author_text_view"
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:layout_marginStart="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_date_top"
@@ -76,11 +76,11 @@
                 android:textSize="@dimen/text_info" />
 
             <TextView
-                android:id="@+id/section"
+                android:id="@+id/section_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@id/author"
+                android:layout_below="@id/author_text_view"
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:layout_marginEnd="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_section_top"
