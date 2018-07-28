@@ -8,9 +8,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
 import android.util.Log;
-import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
 
